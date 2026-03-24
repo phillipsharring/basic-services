@@ -29,9 +29,18 @@ services:
       - 8025:8025
     platform: linux/amd64
 
+  proxy:
+    image: nginx:alpine
+    container_name: proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d:ro
+
 volumes:
   db-data: ~
 
 networks:
-  services_network:
+  default:
+    name: shared
     driver: bridge
