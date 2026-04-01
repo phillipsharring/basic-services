@@ -18,7 +18,7 @@ services:
     environment:
       - ADMINER_DESIGN=dracula
     ports:
-      - "8082:8080"
+      - "8080:8080"
 
   mailhog:
     image: mailhog/mailhog
